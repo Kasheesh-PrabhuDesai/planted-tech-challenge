@@ -7,10 +7,13 @@ const useStyles = makeStyles(theme =>
     search: {
       width: "70vw",
       borderRadius: 4,
-      background: "white",
+      background: "#f5f5f5",
       border: "0.1px solid",
-      marginTop: theme.spacing(5),
-      marginBottom: theme.spacing(5),
+    },
+    searchContainer: {
+      marginTop: theme.spacing(3),
+      marginBottom: theme.spacing(3),
+      position: "fixed",
     },
   })
 );
@@ -34,7 +37,12 @@ export default function Search() {
   };
 
   return (
-    <Grid container justifyContent="center" alignItems="center">
+    <Grid
+      container
+      justifyContent="center"
+      alignItems="center"
+      className={classes.searchContainer}
+    >
       <TextField
         variant="outlined"
         value={location}

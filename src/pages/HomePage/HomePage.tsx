@@ -6,7 +6,9 @@ import Search from "../../components/Search";
 export default function HomePage() {
   return (
     <Layout>
-      <Search />
+      <Grid container justifyContent="center" style={{ height: "15vh" }}>
+        <Search />
+      </Grid>
       <Grid container justifyContent="center">
         <ProjectCard />
       </Grid>
