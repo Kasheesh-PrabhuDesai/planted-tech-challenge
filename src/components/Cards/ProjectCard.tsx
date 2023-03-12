@@ -44,7 +44,6 @@ const useStyles = makeStyles(theme =>
 export default function ProjectCard() {
   const classes = useStyles();
   const { closestProjects } = useContext(PlantationContext);
-  console.log(closestProjects);
   return (
     <Fragment>
       {closestProjects.map(item => (
