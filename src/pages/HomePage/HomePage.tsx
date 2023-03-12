@@ -24,7 +24,6 @@ export default function HomePage() {
       </Grid>
       <Grid container justifyContent="center">
         {filteredProjects.length > 0 ? <FilteredCard /> : <ProjectCard />}
-        <ProjectCard />
       </Grid>
     </Layout>
   );
