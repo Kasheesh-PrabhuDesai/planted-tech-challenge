@@ -47,6 +47,7 @@ export default function Search() {
         className={classes.search}
         onChange={e => handleSetLocation(e)}
         placeholder="🔍 Enter a location to search"
+        role="search"
       />
     </Grid>
   );

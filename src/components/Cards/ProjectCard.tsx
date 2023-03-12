@@ -44,15 +44,20 @@ const useStyles = makeStyles(theme =>
 export default function ProjectCard() {
   const classes = useStyles();
   const { closestProjects } = useContext(PlantationContext);
+  console.log(closestProjects);
   return (
     <Fragment>
       {closestProjects.map(item => (
         <Grid key={item.name}>
-          <Typography variant="h3" className={classes.title}>
+          <Typography variant="h3" className={classes.title} role="title">
             {item.name}
           </Typography>
           {item.projects.map((project, projectIndex) => (
-            <Card className={classes.card} key={projectIndex}>
+            <Card
+              className={classes.card}
+              key={projectIndex}
+              role={"project-card"}
+            >
               <CardContent>
                 <Typography className={classes.text}>
                   <b className={classes.heading}>Project Name : </b>
