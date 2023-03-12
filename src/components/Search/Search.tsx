@@ -5,14 +5,12 @@ import { PlantationContext } from "../../App";
 const useStyles = makeStyles(theme =>
   createStyles({
     search: {
-      width: "70vw",
+      width: "82vw",
       borderRadius: 4,
       background: "#f5f5f5",
       border: "0.1px solid",
     },
     searchContainer: {
-      marginTop: theme.spacing(3),
-      marginBottom: theme.spacing(3),
       position: "fixed",
     },
   })

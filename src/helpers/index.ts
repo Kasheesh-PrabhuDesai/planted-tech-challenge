@@ -41,7 +41,17 @@ export const threeClosestProjects = (
   }>
 ) => {
   distanceArray.sort((a, b) => a.distance - b.distance);
-  const threeSmallest = [distanceArray[0], distanceArray[1], distanceArray[2]];
+  /*Considering that there are a lot of duplicate project names in the plantationProjects.json
+  and we wish to display only unique project names.*/
+  const uniqueArray = [];
+  const map = new Map();
+  for (const item of distanceArray) {
+    if (!map.has(item.name)) {
+      map.set(item.name, true);
+      uniqueArray.push(item);
+    }
+  }
+  const threeSmallest = [uniqueArray[0], uniqueArray[1], uniqueArray[2]];
   return threeSmallest;
 };
 

@@ -1,12 +1,12 @@
 import {
+  Grid,
+  Typography,
   Card,
+  CardContent,
   makeStyles,
   createStyles,
-  CardContent,
-  Typography,
-  Grid,
 } from "@material-ui/core";
-import React, { Fragment, useContext } from "react";
+import { Fragment, useContext } from "react";
 import { PlantationContext } from "../../App";
 
 const useStyles = makeStyles(theme =>
@@ -41,33 +41,34 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-export default function ProjectCard() {
+export default function FilteredCard() {
   const classes = useStyles();
-  const { closestProjects } = useContext(PlantationContext);
+  const { filteredProjects } = useContext(PlantationContext);
   return (
     <Fragment>
-      {closestProjects.map(item => (
-        <Grid key={item.name}>
-          <Typography variant="h3" className={classes.title}>
+      {filteredProjects.map((item, index) => (
+        <Grid key={index}>
+          <Typography variant="h3" className={classes.title} key={index}>
             {item.name}
           </Typography>
-          {item.projects.map((project, projectIndex) => (
-            <Card className={classes.card} key={projectIndex}>
+          {item.projects.map(project => (
+            <Card className={classes.card} key={project.id}>
               <CardContent>
                 <Typography className={classes.text}>
                   <b className={classes.heading}>Project Name : </b>
-                  {project?.name}
+                  {project.name}
                 </Typography>
                 <Typography className={classes.text}>
                   <b className={classes.heading}>Distance : </b>
-                  {Math.floor(project?.distance)} kms
+                  {Math.floor(project.distance)} kms
                 </Typography>
                 <Typography variant="h6" className={classes.text}>
-                  <b className={classes.heading}>Start Id : </b>{" "}
-                  {project?.startId}
+                  <b className={classes.heading}>Start Id : </b>
+                  {project.startId}
                 </Typography>
                 <Typography variant="h6" className={classes.text}>
-                  <b className={classes.heading}>End Id : </b> {project?.endId}
+                  <b className={classes.heading}>End Id : </b>
+                  {project.endId}
                 </Typography>
               </CardContent>
             </Card>
