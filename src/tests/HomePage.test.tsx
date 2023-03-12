@@ -52,8 +52,8 @@ describe("Home page tests", () => {
     const projectCards = screen.queryAllByRole("project-card");
     const title = screen.queryAllByRole("title");
     const searchBar = screen.queryByRole("search");
-    expect(projectCards.length).toBe(6);
+    expect(projectCards.length).toBe(3);
     expect(searchBar).toBeInTheDocument();
-    expect(title.length).toBe(2);
+    expect(title.length).toBe(1);
   });
 });
